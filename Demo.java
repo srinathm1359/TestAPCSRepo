@@ -41,7 +41,7 @@ public class Demo {
     return toReturn;
   }
 
-  public static int[][] create2dArray(int rows, int cols, int maxValue) {
+  public static int[][] create2DArray(int rows, int cols, int maxValue) {
     int[][] toReturn = new int[rows][cols];
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
