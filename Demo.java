@@ -24,8 +24,8 @@ public class Demo {
       if (i < arr.length - 1) {
         toReturn += ",";
       }
-      else toReturn += "}";
     }
+    toReturn += "}";
     return toReturn;
   }
 
@@ -45,6 +45,17 @@ public class Demo {
     int[][] toReturn = new int[rows][cols];
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
+        toReturn[i][j] = (int)((maxValue + 1) * Math.random());
+      }
+    }
+    return toReturn;
+  }
+  public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue) {
+    int[][] toReturn = new int[rows][];
+    for (int i = 0; i < rows; i++) {
+      int currentCol = (int)((cols + 1) * Math.random());
+      toReturn[i] = new int[currentCol];
+      for (int j = 0; j < currentCol; j++) {
         toReturn[i][j] = (int)((maxValue + 1) * Math.random());
       }
     }
