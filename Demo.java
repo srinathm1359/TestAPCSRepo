@@ -6,6 +6,7 @@ public class Demo {
     } else loopNumber = Integer.parseInt(args[0]);
     printLoop(loopNumber);
   }
+
   public static void printLoop(int loopNumber) {
     for (int i = 0; i < loopNumber; i++) {
       String toPrint = "";
@@ -14,5 +15,39 @@ public class Demo {
       }
       System.out.println(toPrint);
     }
+  }
+
+  public static String arrToString(int[] arr) {
+    String toReturn = "{";
+    for (int i = 0; i < arr.length; i++) {
+      toReturn += arr[i];
+      if (i < arr.length - 1) {
+        toReturn += ",";
+      }
+      else toReturn += "}";
+    }
+    return toReturn;
+  }
+
+  public static String arrayDeepToString(int[][] arr) {
+    String toReturn = "{";
+    for (int i = 0; i < arr.length; i++) {
+      toReturn += arrToString(arr[i]);
+      if (i < arr.length - 1) {
+        toReturn += ",\n";
+      }
+      else toReturn += "}";
+    }
+    return toReturn;
+  }
+
+  public static int[][] create2dArray(int rows, int cols, int maxValue) {
+    int[][] toReturn = new int[rows][cols];
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+        toReturn[i][j] = (int)((maxValue + 1) * Math.random());
+      }
+    }
+    return toReturn;
   }
 }
